@@ -24,3 +24,8 @@ class World:
 
     def get_map(self) -> list:
         pass
+
+    
+if __name__ == "__main__":
+    width, height = 9, 9
+    world_map = [[0 for i in range(width)] for j in range(height)]
