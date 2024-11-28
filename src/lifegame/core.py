@@ -29,3 +29,10 @@ class World:
 if __name__ == "__main__":
     width, height = 9, 9
     world_map = [[0 for i in range(width)] for j in range(height)]
+
+    new_world_map = [[0 for i in range(width)] for j in range(height)]
+
+    for i in range(height):
+        for j in range(width):
+            print(world_map[i][j], end='')
+        print()
