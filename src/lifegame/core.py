@@ -31,6 +31,11 @@ if __name__ == "__main__":
     world_map = [[0 for i in range(width)] for j in range(height)]
 
     # init world
+    world_map[0][0] = 1
+    world_map[0][1] = 1
+    world_map[1][0] = 1
+    world_map[1][1] = 1
+    world_map[1][2] = 1
 
     
     new_world_map = [[0 for i in range(width)] for j in range(height)]
@@ -38,32 +43,46 @@ if __name__ == "__main__":
     for i in range(height):
         for j in range(width):
             sum_array = list()
-            if i == 0:
+            if i == 0 and j == 0:
                 sum_array.append(world_map[i+1][j]) 
-                if j == 0:
-                    sum_array.append(world_map[i][j+1])
-                    sum_array.append(world_map[i+1][j+1])
-                elif j == width - 1:
-                    sum_array.append(world_map[i][j-1])
-                    sum_array.append(world_map[i+1][j-1])
-                else:
-                    sum_array.append(world_map[i][j+1])
-                    sum_array.append(world_map[i+1][j+1])
-                    sum_array.append(world_map[i][j-1])
-                    sum_array.append(world_map[i+1][j-1])
+                sum_array.append(world_map[i][j+1])
+                sum_array.append(world_map[i+1][j+1])
+            elif i == 0 and j == width - 1:
+                sum_array.append(world_map[i+1][j]) 
+                sum_array.append(world_map[i][j-1])
+                sum_array.append(world_map[i+1][j-1])
+            elif i == 0:
+                sum_array.append(world_map[i+1][j]) 
+                sum_array.append(world_map[i][j+1])
+                sum_array.append(world_map[i+1][j+1])
+                sum_array.append(world_map[i][j-1])
+                sum_array.append(world_map[i+1][j-1])
+            elif i == height - 1 and j == 0:
+                sum_array.append(world_map[i-1][j])
+                sum_array.append(world_map[i][j+1])
+                sum_array.append(world_map[i-1][j+1])
+            elif i == height - 1 and j == width - 1:
+                sum_array.append(world_map[i-1][j])
+                sum_array.append(world_map[i][j-1])
+                sum_array.append(world_map[i-1][j-1])
             elif i == height - 1:
                 sum_array.append(world_map[i-1][j])
-                if j == 0:
-                    sum_array.append(world_map[i][j+1])
-                    sum_array.append(world_map[i-1][j+1])
-                elif j == width - 1:
-                    sum_array.append(world_map[i][j-1])
-                    sum_array.append(world_map[i-1][j-1])
-                else:
-                    sum_array.append(world_map[i][j+1])
-                    sum_array.append(world_map[i-1][j+1])
-                    sum_array.append(world_map[i][j-1])
-                    sum_array.append(world_map[i-1][j-1])
+                sum_array.append(world_map[i][j+1])
+                sum_array.append(world_map[i-1][j+1])
+                sum_array.append(world_map[i][j-1])
+                sum_array.append(world_map[i-1][j-1])
+            elif j == 0:
+                sum_array.append(world_map[i-1][j])
+                sum_array.append(world_map[i-1][j+1])
+                sum_array.append(world_map[i][j+1])
+                sum_array.append(world_map[i+1][j+1])
+                sum_array.append(world_map[i+1][j]) 
+            elif j == width - 1:
+                sum_array.append(world_map[i-1][j-1])
+                sum_array.append(world_map[i-1][j])
+                sum_array.append(world_map[i+1][j]) 
+                sum_array.append(world_map[i+1][j-1])
+                sum_array.append(world_map[i][j-1])
             else:
                 sum_array.append(world_map[i-1][j-1])
                 sum_array.append(world_map[i-1][j])
@@ -89,4 +108,9 @@ if __name__ == "__main__":
     for i in range(height):
         for j in range(width):
             print(world_map[i][j], end='')
+        print()
+    # print new world map
+    for i in range(height):
+        for j in range(width):
+            print(new_world_map[i][j], end='')
         print()
