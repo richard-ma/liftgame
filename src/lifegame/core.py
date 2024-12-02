@@ -25,7 +25,28 @@ class World:
     def get_map(self) -> list:
         pass
 
+
+class MapPrinter:
+    def __init__(self) -> None:
+        self.x_min = 0
+        self.x_max = 0
+        self.y_min = 0
+        self.y_max = 0
+
+    def get_width(self) -> int:
+        return self.x_max - self.x_min + 1
+
+    def get_height(self) -> int:
+        return self.y_max - self.y_min + 1
+
+    def print(self, map_data: list) -> None:
+        pass
     
+
+if __name__ == "__main__":
+    pass
+
+
 '''
 if __name__ == "__main__":
     width, height = 9, 9
