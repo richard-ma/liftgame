@@ -26,6 +26,7 @@ class World:
         pass
 
     
+'''
 if __name__ == "__main__":
     width, height = 9, 9
     world_map = [[0 for i in range(width)] for j in range(height)]
@@ -114,3 +115,4 @@ if __name__ == "__main__":
         for j in range(width):
             print(new_world_map[i][j], end='')
         print()
+'''
