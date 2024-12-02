@@ -29,9 +29,9 @@ class World:
 class MapPrinter:
     def __init__(self) -> None:
         self.x_min = 0
-        self.x_max = 0
+        self.x_max = -1
         self.y_min = 0
-        self.y_max = 0
+        self.y_max = -1
 
     def get_width(self) -> int:
         return self.x_max - self.x_min + 1
@@ -40,11 +40,29 @@ class MapPrinter:
         return self.y_max - self.y_min + 1
 
     def print(self, map_data: list) -> None:
-        pass
+        if map_data and (self.get_width() == 0 or self.get_height() == 0):
+            # self not initialized
+            zipped_data = list(zip(*map_data))
+            self.x_min, self.x_max = min(zipped_data[0]), max(zipped_data[0])
+            self.y_min, self.y_max = min(zipped_data[1]), max(zipped_data[1])
+        
+        for row in range(self.y_min, self.y_max+1):
+            for col in range(self.x_min, self.x_max+1):
+                if (row, col) in map_data:
+                    print('1', end='')
+                else:
+                    print('0', end='')
+            print()
+            
     
 
 if __name__ == "__main__":
-    pass
+    map_data = [(0, 0), (1, 0), (0, 1), (1, 1), ]
+    mp = MapPrinter()
+    print(mp.x_min, mp.x_max)
+    print(mp.y_min, mp.y_max)
+    print(mp.get_width(), mp.get_height())
+    mp.print(map_data)
 
 
 '''
