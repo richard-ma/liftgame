@@ -57,7 +57,7 @@ class MapPrinter:
     
 
 if __name__ == "__main__":
-    map_data = [(0, 0), (1, 0), (0, 1), (1, 1), ]
+    map_data = [(0, 0), (1, 0), (0, 1), (1, 1), (-3, 1)]
     mp = MapPrinter()
     print(mp.x_min, mp.x_max)
     print(mp.y_min, mp.y_max)
