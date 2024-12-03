@@ -1,18 +1,26 @@
 #-*- coding: utf-8 -*-
 
+'''
+map format
+[(x1, y1), (x2, y2)]
+(x1, y1) is coodinates of True point
+
+around is also used this format
+'''
+
 class Life:
     def __init__(self, status: bool) -> None:
-        self._is_alive = 1 if status else 0
+        self._is_alive = status
 
     def progress(self, around: list) -> bool:
-        s = sum(around)
-        if self._is_alive == 0 and s == 3:
-            self._is_alive = 1
-        else: # self._is_alive = 1
+        s = len(around)
+        if self._is_alive == False and s == 3:
+            self._is_alive = True 
+        else: # self._is_alive = True
             if s < 2 or s > 3:
-                self._is_alive = 0
+                self._is_alive = False
             else: # around sum is 2 or 3
-                self._is_alive = 1
+                self._is_alive = True
 
 
 class World:
