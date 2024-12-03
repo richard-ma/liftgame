@@ -33,6 +33,11 @@ class World:
     def get_map(self) -> list:
         return self._map
 
+        
+class WorldHistory:
+    def __init__(self) -> None:
+        self._history = list()
+
 
 class MapPrinter:
     def __init__(self) -> None:
