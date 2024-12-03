@@ -78,8 +78,8 @@ class MapPrinter:
             
 
 class LifeGame:
-    def __init__(self) -> None:
-        self._current_world = list()
+    def __init__(self, world: World) -> None:
+        self._current_world = world
         self._history = WorldHistory()
         self._printer = MapPrinter()
 
