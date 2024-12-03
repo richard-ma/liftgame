@@ -25,7 +25,7 @@ class Life:
 
 class World:
     def __init__(self, width: int, height: int) -> None:
-        self._map = [0] * (width * height)
+        self._map = list()
     
     def set_map(self, map: list) -> None:
         pass
