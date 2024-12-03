@@ -76,6 +76,12 @@ class MapPrinter:
                     print('0', end='')
             print()
             
+
+class LifeGame:
+    def __init__(self) -> None:
+        self._current_world = list()
+        self._history = WorldHistory()
+        self._printer = MapPrinter()
     
 
 if __name__ == "__main__":
