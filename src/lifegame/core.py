@@ -82,6 +82,9 @@ class LifeGame:
         self._current_world = list()
         self._history = WorldHistory()
         self._printer = MapPrinter()
+
+    def progress(self) -> int:
+        pass
     
 
 if __name__ == "__main__":
