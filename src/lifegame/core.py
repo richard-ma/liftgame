@@ -24,14 +24,14 @@ class Life:
 
 
 class World:
-    def __init__(self, width: int, height: int) -> None:
+    def __init__(self) -> None:
         self._map = list()
     
     def set_map(self, map: list) -> None:
-        pass
+        self._map = map
 
     def get_map(self) -> list:
-        pass
+        return self._map
 
 
 class MapPrinter:
