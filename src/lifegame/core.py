@@ -8,19 +8,19 @@ map format
 around is also used this format
 '''
 
-class Life:
-    def __init__(self, status: bool) -> None:
-        self._is_alive = status
+# class Life:
+#     def __init__(self, status: bool) -> None:
+#         self._is_alive = status
 
-    def progress(self, around: list) -> bool:
-        s = len(around)
-        if self._is_alive == False and s == 3:
-            self._is_alive = True 
-        else: # self._is_alive = True
-            if s < 2 or s > 3:
-                self._is_alive = False
-            else: # around sum is 2 or 3
-                self._is_alive = True
+#     def progress(self, around: list) -> bool:
+#         s = len(around)
+#         if self._is_alive == False and s == 3:
+#             self._is_alive = True 
+#         else: # self._is_alive = True
+#             if s < 2 or s > 3:
+#                 self._is_alive = False
+#             else: # around sum is 2 or 3
+#                 self._is_alive = True
 
 
 class World:
