@@ -34,7 +34,11 @@ class World:
         return self._alive
 
     def step_forward(self) -> None:
-        pass
+        # new alive list
+        new_alive = list()
+        # update alive status to new alive list
+        # update self._alive
+        self._alive = new_alive
 
         
 class WorldHistory:
