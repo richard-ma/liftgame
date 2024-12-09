@@ -62,7 +62,7 @@ class World:
                         around_sum += 1
 
                 # get new status
-                if around_sum == 3:
+                if (x, y) not in self._alive and  around_sum == 3:
                     new_alive.append((x, y))
                 else: # x, y is alive
                     if around_sum < 2 or around_sum > 3:
