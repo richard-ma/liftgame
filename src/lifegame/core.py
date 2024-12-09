@@ -129,10 +129,12 @@ class LifeGame:
 
 if __name__ == "__main__":
     alives = [(0, 0), (1, 0), (0, 1), (1, 1), (-3, 2), (-3, -3)]
+    mp = MapPrinter()
     world = World(alives)
-    print(world.get_alive())
+    mp.print(world.get_alive())
     world.step_forward()
-    print(world.get_alive())
+    print('-' * 30)
+    mp.print(world.get_alive())
     
 
     # mp = MapPrinter()
