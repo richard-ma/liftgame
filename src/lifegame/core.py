@@ -43,9 +43,9 @@ class World:
         width = x_max - x_min + 1
         height = y_max - y_min + 1
         # update alive status to new alive list
-        around_sum = 0
         for y in range(y_min, y_max+1):
             for x in range(x_min, x_max+1):
+                around_sum = 0
                 around_list = [
                     (x-1, y-1),
                     (x-1, y),
@@ -61,8 +61,9 @@ class World:
                     if point in self._alive:
                         around_sum += 1
 
+                print(x, y, around_sum, around_list)
                 # get new status
-                if (x, y) not in self._alive and  around_sum == 3:
+                if (x, y) not in self._alive and around_sum == 3:
                     new_alive.append((x, y))
                 else: # x, y is alive
                     if around_sum < 2 or around_sum > 3:
@@ -128,7 +129,7 @@ class LifeGame:
     
 
 if __name__ == "__main__":
-    alives = [(0, 0), (1, 0), (0, 1), (1, 1), (-3, 2), (-3, -3)]
+    alives = [(0, 0), (1, 0), (0, 1), (1, 1)]
     mp = MapPrinter()
     world = World(alives)
     mp.print(world.get_alive())
