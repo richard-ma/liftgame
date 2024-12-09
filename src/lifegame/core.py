@@ -36,8 +36,30 @@ class World:
     def step_forward(self) -> None:
         # new alive list
         new_alive = list()
+        # claculate x aix and y aix
+        zipped_data = list(zip(*self._alive))
+        x_min, x_max = min(zipped_data[0]), max(zipped_data[0])
+        y_min, y_max = min(zipped_data[1]), max(zipped_data[1])
+        width = x_max - x_min + 1
+        height = y_max - y_min + 1
         # update alive status to new alive list
         around_sum = 0
+        for y in range(y_min, y_max+1):
+            for x in range(x_min, x_max+1):
+                around_list = [
+                    (x-1, y-1),
+                    (x-1, y),
+                    (x-1, y+1),
+                    (x, y-1),
+                    #(x, y), this is x, y
+                    (x, y+1),
+                    (x+1, y-1),
+                    (x+1, y),
+                    (x+1, y+1),
+                ]
+                for point in around_list:
+                    if point in self._alive:
+                        around_sum += 1
         
         # update self._alive
         self._alive = new_alive
