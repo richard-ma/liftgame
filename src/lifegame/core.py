@@ -60,6 +60,15 @@ class World:
                 for point in around_list:
                     if point in self._alive:
                         around_sum += 1
+
+                # get new status
+                if around_sum == 3:
+                    new_alive.append((x, y))
+                else: # x, y is alive
+                    if around_sum < 2 or around_sum > 3:
+                        pass
+                    else: # around sum is 2 or 3
+                        new_alive.append((x, y))
         
         # update self._alive
         self._alive = new_alive
