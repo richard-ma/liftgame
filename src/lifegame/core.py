@@ -127,10 +127,3 @@ if __name__ == "__main__":
     print('-' * 30)
     print(world.get_alive())
     mp.print(world.get_alive())
-    
-
-    # mp = MapPrinter()
-    # mp.print(map_data)
-    # print(mp.x_min, mp.x_max)
-    # print(mp.y_min, mp.y_max)
-    # print(mp.get_width(), mp.get_height())
