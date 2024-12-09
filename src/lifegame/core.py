@@ -51,7 +51,7 @@ class World:
                 if (x, y) not in self._alive and around_sum == 3:
                     new_alive.append((x, y))
                 else: # x, y is alive
-                    if around_sum >= 2 or around_sum <= 3: # around sum is 2 or 3
+                    if around_sum == 2 or around_sum == 3: # around sum is 2 or 3
                         new_alive.append((x, y))
         
         # update self._alive
