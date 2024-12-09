@@ -74,16 +74,22 @@ class WorldHistory:
 
 class MapPrinter:
     def __init__(self) -> None:
-        self.x_min = 0
-        self.x_max = -1
-        self.y_min = 0
-        self.y_max = -1
+        self.x_min = None
+        self.x_max = None 
+        self.y_min = None
+        self.y_max = None
 
     def get_width(self) -> int:
-        return self.x_max - self.x_min + 1
+        if self.x_max and self.x_min:
+            return self.x_max - self.x_min + 1
+        else:
+            return 0
 
     def get_height(self) -> int:
-        return self.y_max - self.y_min + 1
+        if self.y_max and self.y_min:
+            return self.y_max - self.y_min + 1
+        else:
+            return 0
 
     def print(self, map_data: list) -> None:
         if map_data and (self.get_width() == 0 or self.get_height() == 0):
