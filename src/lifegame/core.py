@@ -24,7 +24,7 @@ around is also used this format
 
 
 class World:
-    def __init__(self) -> None:
+    def __init__(self, init_state: list) -> None:
         self._map = list()
     
     def set_map(self, map: list) -> None:
