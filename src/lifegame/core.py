@@ -37,6 +37,8 @@ class World:
         # new alive list
         new_alive = list()
         # update alive status to new alive list
+        around_sum = 0
+        
         # update self._alive
         self._alive = new_alive
 
