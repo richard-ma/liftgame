@@ -50,9 +50,10 @@ class World:
                 # get new status
                 if (x, y) not in self._alive and around_sum == 3:
                     new_alive.append((x, y))
-                else: # x, y is alive
-                    if around_sum == 2 or around_sum == 3: # around sum is 2 or 3
-                        new_alive.append((x, y))
+                elif (x, y) in self._alive and (around_sum == 2 or around_sum == 3): # x, y is alive and around sum is 2 or 3
+                    new_alive.append((x, y))
+                else:
+                    pass
         
         # update self._alive
         self._alive = new_alive
