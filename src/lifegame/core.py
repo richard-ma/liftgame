@@ -98,9 +98,9 @@ class MapPrinter:
             self.x_min, self.x_max = min(zipped_data[0]), max(zipped_data[0])
             self.y_min, self.y_max = min(zipped_data[1]), max(zipped_data[1])
         
-        for row in range(self.y_min, self.y_max+1):
-            for col in range(self.x_min, self.x_max+1):
-                if (row, col) in map_data:
+        for y in range(self.y_min, self.y_max+1):
+            for x in range(self.x_min, self.x_max+1):
+                if (x, y) in map_data:
                     print('1', end='')
                 else:
                     print('0', end='')
