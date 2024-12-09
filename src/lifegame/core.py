@@ -27,11 +27,11 @@ class World:
     def __init__(self, alive: list) -> None:
         self._alive = alive
     
-    def set_map(self, map: list) -> None:
-        self._map = map
+    def set_alive(self, alive: list) -> None:
+        self._alive = alive
 
-    def get_map(self) -> list:
-        return self._map
+    def get_alive(self) -> list:
+        return self._alive
 
         
 class WorldHistory:
