@@ -123,10 +123,10 @@ if __name__ == "__main__":
     world = World(alives)
     print(world.get_alive())
     mp.print(world.get_alive())
-    # world.step_forward()
-    # print('-' * 30)
-    # print(world.get_alive())
-    # mp.print(world.get_alive())
+    world.step_forward()
+    print('-' * 30)
+    print(world.get_alive())
+    mp.print(world.get_alive())
     
 
     # mp = MapPrinter()
