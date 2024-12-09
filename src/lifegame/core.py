@@ -33,6 +33,9 @@ class World:
     def get_alive(self) -> list:
         return self._alive
 
+    def step_forward(self) -> None:
+        pass
+
         
 class WorldHistory:
     def __init__(self) -> None:
