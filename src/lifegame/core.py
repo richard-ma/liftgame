@@ -128,12 +128,18 @@ class LifeGame:
     
 
 if __name__ == "__main__":
-    map_data = [(0, 0), (1, 0), (0, 1), (1, 1), (-3, 2), (-3, -3)]
-    mp = MapPrinter()
-    mp.print(map_data)
-    print(mp.x_min, mp.x_max)
-    print(mp.y_min, mp.y_max)
-    print(mp.get_width(), mp.get_height())
+    alives = [(0, 0), (1, 0), (0, 1), (1, 1), (-3, 2), (-3, -3)]
+    world = World(alives)
+    print(world.get_alive())
+    world.step_forward()
+    print(world.get_alive())
+    
+
+    # mp = MapPrinter()
+    # mp.print(map_data)
+    # print(mp.x_min, mp.x_max)
+    # print(mp.y_min, mp.y_max)
+    # print(mp.get_width(), mp.get_height())
 
 
 '''
