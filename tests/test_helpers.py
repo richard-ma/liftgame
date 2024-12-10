@@ -7,9 +7,6 @@ class TestHelpers(unittest.TestCase):
     
     def tearDown(self):
         return super().tearDown()
-
-    def returnTrue(self):
-        return True
     
     def test_map_printer(self):
         pass
