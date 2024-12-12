@@ -8,7 +8,7 @@ if __name__ == "__main__":
     world = World(true_map)
 
     mp = MapPrinter()
-    mp.print(world.get_alive())
+    print(world)
 
     world.step_forward()
-    mp.print(world.get_alive())
+    print(world)
