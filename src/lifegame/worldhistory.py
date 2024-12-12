@@ -8,7 +8,7 @@ class WorldHistory:
         self._history = list()
 
     def append_history(self, world: World) -> None:
-        self._history.append(world)
+        self._history.append(world.get_alive())
 
     def _clear(self) -> None:
         self._history = list()
