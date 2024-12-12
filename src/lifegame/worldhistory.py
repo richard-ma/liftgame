@@ -30,7 +30,14 @@ class WorldHistory:
         return self.get(-1)
 
     def save(self, record_filename) -> bool:
+        serialized_history = json.dumps(self._history)
+        with open(record_filename, 'w') as file:
+            file.write(serialized_history)
         return True
 
     def load(self, record_filename) -> bool:
+        serialized_history = ""
+        with open(record_filename, 'r') as file:
+            serialized_history = file.read()
+        print(serialized_history)
         return True
