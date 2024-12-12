@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+from .world import World
+
 
 class WorldHistory:
     def __init__(self) -> None:
