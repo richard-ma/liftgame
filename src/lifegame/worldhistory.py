@@ -27,3 +27,9 @@ class WorldHistory:
 
     def get_lasst(self) -> World:
         return self.get(-1)
+
+    def save(self, record_filename) -> bool:
+        return True
+
+    def load(self, record_filename) -> bool:
+        return True
