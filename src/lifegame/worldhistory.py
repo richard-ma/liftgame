@@ -18,3 +18,12 @@ class WorldHistory:
 
     def len(self) -> int:
         return len(self._history)
+
+    def get(self, index: int) -> World:
+        return World(self._history[index])
+
+    def get_first(self) -> World:
+        return self.get(0)
+
+    def get_lasst(self) -> World:
+        return self.get(-1)
