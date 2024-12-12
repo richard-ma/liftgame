@@ -15,3 +15,6 @@ class WorldHistory:
 
     def clear_history(self) -> None:
         self._clear()
+
+    def len(self) -> int:
+        return len(self._history)
