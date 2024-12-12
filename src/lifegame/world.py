@@ -12,12 +12,29 @@ around is also used this format
 class World:
     def __init__(self, alive: list) -> None:
         self._alive = alive
+
+        self.x_min = None
+        self.x_max = None 
+        self.y_min = None
+        self.y_max = None
     
     def set_alive(self, alive: list) -> None:
         self._alive = alive
 
     def get_alive(self) -> list:
         return self._alive
+
+    def get_width(self) -> int:
+        if self.x_max and self.x_min:
+            return self.x_max - self.x_min + 1
+        else:
+            return 0
+
+    def get_height(self) -> int:
+        if self.y_max and self.y_min:
+            return self.y_max - self.y_min + 1
+        else:
+            return 0
 
     def step_forward(self) -> None:
         # new alive list
@@ -58,3 +75,22 @@ class World:
         
         # update self._alive
         self._alive = new_alive
+
+    def __str__(self) -> None:
+        map_data = self._alive
+        if map_data and (self.get_width() == 0 or self.get_height() == 0):
+            # self not initialized
+            zipped_data = list(zip(*map_data))
+            self.x_min, self.x_max = min(zipped_data[0]), max(zipped_data[0])
+            self.y_min, self.y_max = min(zipped_data[1]), max(zipped_data[1])
+        
+        ret = ""
+        for y in range(self.y_min, self.y_max+1):
+            for x in range(self.x_min, self.x_max+1):
+                if (x, y) in map_data:
+                    ret += '1'
+                else:
+                    ret += '0'
+            ret += '\n'
+
+        return ret
