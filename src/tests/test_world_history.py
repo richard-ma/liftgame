@@ -26,5 +26,5 @@ class TestWorldHistory(unittest.TestCase):
         world_history.append_history(self.first_history)
         world_history.append_history(self.last_history)
 
-        world_history.save("test")
-        world_history.load("test")
+        world_history.save("history_test.json")
+        world_history.load("history_test.json")
