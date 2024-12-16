@@ -33,3 +33,6 @@ class TestWorldHistory(unittest.TestCase):
     def test_save_history(self):
         self.world_history.save("history_test.json")
         self.world_history.load("history_test.json")
+        self.assertEqual(self.world_history.get_first(), self.first_history)
+        self.assertEqual(self.world_history.get_last(), self.first_history)
+        
