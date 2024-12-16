@@ -17,6 +17,12 @@ class World:
         self.x_max = None 
         self.y_min = None
         self.y_max = None
+
+    def __eq__(self, other) -> bool:
+        if isinstance(other, World):
+            return self._alive == other._alive
+        else:
+            raise TypeError(other, " is not the instance of Wrold.")
     
     def set_alive(self, alive: list) -> None:
         self._alive = alive
