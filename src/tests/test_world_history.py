@@ -28,11 +28,11 @@ class TestWorldHistory(unittest.TestCase):
         self.assertEqual(self.world_history.get_first(), self.first_history)
 
     def test_get_last_history(self):
-        self.assertEqual(self.world_history.get_last(), self.first_history)
+        self.assertEqual(self.world_history.get_last(), self.last_history)
 
     def test_save_history(self):
         self.world_history.save("history_test.json")
         self.world_history.load("history_test.json")
         self.assertEqual(self.world_history.get_first(), self.first_history)
-        self.assertEqual(self.world_history.get_last(), self.first_history)
+        self.assertEqual(self.world_history.get_last(), self.last_history)
         
