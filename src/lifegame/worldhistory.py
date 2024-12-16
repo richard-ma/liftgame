@@ -26,7 +26,7 @@ class WorldHistory:
     def get_first(self) -> World:
         return self.get(0)
 
-    def get_lasst(self) -> World:
+    def get_last(self) -> World:
         return self.get(-1)
 
     def save(self, record_filename) -> bool:
