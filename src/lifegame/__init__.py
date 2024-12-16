@@ -14,6 +14,12 @@ class Lifegame:
         self._world.step_forward()
         self._world_history.append(self._world)
 
+    def get_current_world(self) -> World:
+        return self._world
+    
+    def get_world_history(self) -> WorldHistory:
+        return self._world_history
+
 
 all = [
     World, 
