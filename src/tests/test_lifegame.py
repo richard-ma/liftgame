@@ -14,3 +14,7 @@ class TestLifegame(unittest.TestCase):
 
     def test_get_current_world(self):
         self.assertEqual(self.lifegame.get_current_world().get_alive(), self.alive)
+
+    def test_get_world_history(self):
+        self.assertEqual(self.lifegame.get_world_history().len(), 1)
+        self.assertEqual(self.lifegame.get_world_history().get_first().get_alive(), self.alive)
