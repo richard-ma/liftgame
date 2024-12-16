@@ -39,5 +39,5 @@ class WorldHistory:
         serialized_history = ""
         with open(record_filename, 'r') as file:
             serialized_history = file.read()
-        print(serialized_history)
+        self._history = json.loads(serialized_history)
         return True
