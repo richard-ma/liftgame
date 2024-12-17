@@ -12,7 +12,7 @@ class Lifegame:
 
     def step(self)-> bool:
         self._world.step_forward()
-        self._world_history.append(self._world)
+        self._world_history.append_history(self._world)
 
     def get_current_world(self) -> World:
         return self._world
