@@ -1,5 +1,7 @@
 #-*- coding: utf-8 -*-
 
+from random import randint
+
 from .world import World
 from .worldhistory import WorldHistory
 
@@ -9,6 +11,7 @@ class Lifegame:
         self._world = World(alive)
         self._world_history = WorldHistory()
         self._world_history.append_history(self._world)
+        self._history_filename = "history_" + randint(100, 999) + ".json"
 
     def step(self)-> bool:
         self._world.step_forward()
@@ -19,6 +22,12 @@ class Lifegame:
     
     def get_world_history(self) -> WorldHistory:
         return self._world_history
+
+    def save(self) -> None:
+        self._world_history.save(self._history_filename)
+
+    def load(self) -> None:
+        self._world_history.load(self._history_filename)
 
 
 all = [
