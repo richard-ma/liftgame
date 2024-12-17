@@ -7,11 +7,14 @@ from .worldhistory import WorldHistory
 
 
 class Lifegame:
-    def __init__(self, alive: list):
+    def __init__(self, alive: list, history_filename=None):
         self._world = World(alive)
         self._world_history = WorldHistory()
         self._world_history.append_history(self._world)
-        self._history_filename = "history_" + str(randint(100, 999)) + ".json"
+        if history_filename:
+            self._history_filename = history_filename
+        else:
+            self._history_filename = "history_" + str(randint(100, 999)) + ".json"
 
     def step(self)-> bool:
         self._world.step_forward()

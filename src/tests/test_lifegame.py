@@ -5,7 +5,7 @@ from lifegame import *
 class TestLifegame(unittest.TestCase):
     def setUp(self):
         self.alive = [(1, 1), (2, 2)]
-        self.lifegame = Lifegame(self.alive)
+        self.lifegame = Lifegame(self.alive, history_filename="history_test.json")
 
         return super().setUp()
 
