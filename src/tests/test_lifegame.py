@@ -22,4 +22,4 @@ class TestLifegame(unittest.TestCase):
     def test_save_and_load(self):
         self.lifegame.save()
         self.lifegame.load()
-        self.assertEqual(self.lifegame.get_current_world().get_alive, self.alive)
+        self.assertEqual(self.lifegame.get_current_world().get_alive(), self.alive)

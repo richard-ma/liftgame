@@ -11,7 +11,7 @@ class Lifegame:
         self._world = World(alive)
         self._world_history = WorldHistory()
         self._world_history.append_history(self._world)
-        self._history_filename = "history_" + randint(100, 999) + ".json"
+        self._history_filename = "history_" + str(randint(100, 999)) + ".json"
 
     def step(self)-> bool:
         self._world.step_forward()
